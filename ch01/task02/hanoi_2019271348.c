@@ -1,9 +1,10 @@
-/* n개의 원판을 3번 기둥으로 옮기기 위해서는 
+/* 
+
 1. n-1개의 원판을 2번 기둥으로 옮긴 다. (n-1개의 원판을 옮기기위한 횟수)
 2. 1번기둥의 n번째 원판을 3번기둥으로 옮긴다. (횟수 1번 추가)
 3. 2번기둥의 n-1번째 원판을 3번기둥으로 옮긴다. (n-1개의 원판을 옮기기위한 횟수)
 
-즉, 재귀 알고리즘을 이용하여 c언어 소스코드를 작성한다. 
+재귀 알고리즘을 이용하여 c언어 소스코드 작성. 
 */
 
 #include <stdio.h>
@@ -21,10 +22,10 @@ void hanoi(int n, int a, int b, int c) {
 	}
 	
 	else {
-		hanoi(n - 1, a, c, b); // n-1개의 원판을 기둥 a 에서 기둥 c를 거쳐 기둥 b로 옮긴다.
-		printf("The upmost disk in rod %d is moved to rod %d\n", a, c); // 기둥 a에 있는 n번째의 마지막 원판을 기둥 c로 옮긴다.
+		hanoi(n - 1, a, c, b);
+		printf("The upmost disk in rod %d is moved to rod %d\n", a, c);
 		num++;
-		hanoi(n - 1, b, a, c); //n-1개의 원판을 기둥 b에서 기둥 a를 거쳐 기둥 c로 옮긴다.
+		hanoi(n - 1, b, a, c);
 	}
 
 }
