@@ -97,8 +97,6 @@ int main() {
         queue_print(q);
     }
 
-
-
     free(q.data);
     return 0;
 }
