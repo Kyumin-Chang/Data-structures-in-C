@@ -3,8 +3,8 @@
 
 #define MAX 100
 
-int stack[MAX];        // ½ºÅÃÀÇ ±ä  Åë
-int top;            // ½ºÅÃÀÇ »ó´Ü
+int stack[MAX];        // ìŠ¤íƒì˜ ê¸´  í†µ
+int top;            // ìŠ¤íƒì˜ ìƒë‹¨
 
 void init_stack(void) {
     top = -1;
@@ -37,26 +37,26 @@ void print_stack(void) {
     }
 }
 
-// ½ºÅÃÀÇ TOPÀÇ °ªÀ» °¡Á®¿Â´Ù.
+// ìŠ¤íƒì˜ TOPì˜ ê°’ì„ ê°€ì ¸ì˜¨ë‹¤.
 int get_stack_top(void) {
     return (top < 0) ? -1 : stack[top];
 }
 
-// ½ºÅÃÀÌ ºñ¾îÀÖ´ÂÁö °Ë»ç
+// ìŠ¤íƒì´ ë¹„ì–´ìˆëŠ”ì§€ ê²€ì‚¬
 int is_stack_empty(void) {
     return (top < 0);
 }
 
-// k °¡ ¿¬»êÀÚÀÎÁö ÆÇ´ÜÇÑ´Ù.
+// k ê°€ ì—°ì‚°ìì¸ì§€ íŒë‹¨í•œë‹¤.
 int is_operator(int k) {
     return (k == '+' || k == '-' || k == '*' || k == '/');
 }
 
-// ÈÄÀ§Ç¥±â¹ı ¼ö½ÄÀÌ ÀûÁ¢ÇÑ°¡ Ã¼Å©
+// í›„ìœ„í‘œê¸°ë²• ìˆ˜ì‹ì´ ì ì ‘í•œê°€ ì²´í¬
 int is_legal(char* s) {
     int f = 0;
     while (*s) {
-        // Ã³À½ °ø¹é ³Ñ¾î°¡±â
+        // ì²˜ìŒ ê³µë°± ë„˜ì–´ê°€ê¸°
         while (*s == ' ') {
             s++;
         }
@@ -76,7 +76,7 @@ int is_legal(char* s) {
     return (f == 1);
 }
 
-// ¿¬»êÀÚÀÇ ¿ì¼±¼øÀ§¸¦ ¼öÄ¡·Î º¯È¯ÇØÁØ´Ù.
+// ì—°ì‚°ìì˜ ìš°ì„ ìˆœìœ„ë¥¼ ìˆ˜ì¹˜ë¡œ ë³€í™˜í•´ì¤€ë‹¤.
 int precedence(int op) {
     if (op == '(') return 0;
     if (op == '+' || op == '-') return 1;
@@ -84,7 +84,7 @@ int precedence(int op) {
     else return 3;
 }
 
-// ÁßÀ§Ç¥±â¹ıÀ» ÈÄÀ§Ç¥±â¹ıÀ¸·Î º¯È¯
+// ì¤‘ìœ„í‘œê¸°ë²•ì„ í›„ìœ„í‘œê¸°ë²•ìœ¼ë¡œ ë³€í™˜
 void postfix(char* dst, char* src) {
     char c;
     init_stack();
@@ -129,7 +129,7 @@ void postfix(char* dst, char* src) {
     *dst = 0;
 }
 
-// ÈÄÀ§Ç¥±â¹ıÀ» °è»êÇÑ´Ù.
+// í›„ìœ„í‘œê¸°ë²•ì„ ê³„ì‚°í•œë‹¤.
 int calc(char* p) {
     int i;
     init_stack();
@@ -173,7 +173,7 @@ void main(void) {
     char exp[256];
     char pf[256];
 
-    printf("½Ä ÀÛ¼º : ");
+    printf("ì‹ ì‘ì„± : ");
     scanf("%s", exp);
 
     postfix(pf, exp);
@@ -188,5 +188,3 @@ void main(void) {
 
     return 0;
 }
-
-//https://hyeonstorage.tistory.com/348
