@@ -165,22 +165,21 @@ int main(void) {
     char express[100];
     int result;
 
-    printf("¼ö½ÄÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä. ex) { (3 * 5) - (6 / 2) }\n");
+    printf("ìˆ˜ì‹ì„ ìž…ë ¥í•´ì£¼ì„¸ìš”. ex) { (3 * 5) - (6 / 2) }\n");
     gets_s(express, 100);
 
 
     if (testPair(express) == 1)
-        printf("\n\n¼ö½ÄÀÇ °ýÈ£°¡ ¸Â°Ô »ç¿ëµÇ¾ú½À´Ï´Ù!");
+        printf("\n\nìˆ˜ì‹ì˜ ê´„í˜¸ê°€ ë§žê²Œ ì‚¬ìš©ë˜ì—ˆìŠµë‹ˆë‹¤!");
     else
-        printf("\n\n¼ö½ÄÀÇ °ýÈ£°¡ Æ²·È½À´Ï´Ù!");
+        printf("\n\nìˆ˜ì‹ì˜ ê´„í˜¸ê°€ í‹€ë ¸ìŠµë‹ˆë‹¤!");
 
 
     exp = changeFormBack(express);
-    printf("\n\nÈÄÀ§ ¿¬»êÀÚ·Î ¹Ù²Û°ª-> %s", exp);
+    printf("\n\ní›„ìœ„ ì—°ì‚°ìžë¡œ ë°”ê¾¼ê°’-> %s", exp);
 
     result = evalPostfix(exp);
-    printf("\n\n¿¬»ê °á°ú => %d", result);
+    printf("\n\nì—°ì‚° ê²°ê³¼ => %d", result);
 
     return 0;
 }
-//https://marinelifeirony.tistory.com/29 
